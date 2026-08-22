@@ -1,0 +1,94 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  Direct unauthenticated GET of each /.well-known/ path on every Human Longevity host discovered in
+  this pass: the marketing/content host (www.humanlongevity.com), the Auth0 custom-domain
+  authorization server (auth.humanlongevity.com) found in the client-portal JavaScript bundle, and
+  the client portal itself (portal.humanlongevity.com).
+note: >-
+  Only auth.humanlongevity.com serves real /.well-known documents. www.humanlongevity.com returns a
+  Next.js HTML 404 page for every /.well-known path. portal.humanlongevity.com is an Angular
+  single-page application whose catch-all route answers HTTP 200 with the same index.html shell for
+  every path probed — those 200s are NOT documents and are recorded as misses, per the SPA
+  false-positive rule.
+hosts:
+- host: auth.humanlongevity.com
+  note: >-
+    Auth0 custom-domain tenant backing the Human Longevity client portal. Serves a complete OpenID
+    Connect discovery document, an identical RFC 8414 OAuth authorization-server document, and a
+    live JWKS.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: human-longevity-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: human-longevity-oauth-authorization-server.json
+    note: Byte-identical to the openid-configuration document.
+  - path: /.well-known/jwks.json
+    status: 200
+    content_type: application/json
+    file: human-longevity-jwks.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.humanlongevity.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: portal.humanlongevity.com
+  note: >-
+    Angular SPA catch-all. Every path below returned HTTP 200 with content-type text/html and the
+    same index.html shell (Auth0 login bootstrap), not a document. Treated as a miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    result: spa-shell-not-a-document

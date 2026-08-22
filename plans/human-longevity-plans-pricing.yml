@@ -1,0 +1,70 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.humanlongevity.com/programs/
+supporting_sources:
+- https://www.humanlongevity.com/genomics/
+- https://www.humanlongevity.com/whole-body-mri/
+- https://www.humanlongevity.com/executive-health/
+- https://www.humanlongevity.com/100plus-care/
+plan_count: 0
+plan_count_note: >-
+  plan_count is ZERO on purpose. Human Longevity publishes no API and therefore no API access plan,
+  usage quota, rate tier or overage schedule. What it does publish — and publishes unusually clearly,
+  with hard prices on a single comparison page rather than a "contact sales" form — is a four-tier
+  ladder of CLINICAL SERVICE programs. Those are recorded below as service_programs[] so the pricing
+  is captured without being counted as API plans.
+currency: USD
+service_programs:
+- name: Genomics for All
+  price: 599
+  currency: USD
+  billing: one-time
+  positioning: Entry point
+  included:
+  - Clinical-grade whole genome sequencing of all 6.4 billion base pairs, CLIA-certified lab
+  - AI interpretation by HLI's proprietary polygenic risk algorithms
+  - Lifetime storage of the genome in HLI's HIPAA-compliant database, re-analyzed as algorithms improve
+  - 1-year HLI AI App subscription included
+  delivery: No clinic visit required; results delivered through the HLI app.
+  source: https://www.humanlongevity.com/genomics/
+- name: Executive Health
+  price: 8000
+  currency: USD
+  billing: annual
+  positioning: Full diagnostic program
+  included:
+  - Everything in Genomics for All
+  - Whole-body and brain MRI (3T)
+  - Cardiac / coronary imaging
+  - 120+ blood biomarkers
+  - Expert clinician review
+  - $1M Cancer Prevention Pledge
+  source: https://www.humanlongevity.com/executive-health/
+- name: 100+ Care
+  price: 12000
+  currency: USD
+  billing: annual
+  positioning: Continuous care
+  included:
+  - Everything in Executive Health
+  - 5 added diagnostics
+  - 365 days of monitoring
+  - Quarterly clinician follow-ups
+  source: https://www.humanlongevity.com/100plus-care/
+- name: 100+ Concierge
+  price: 19000
+  currency: USD
+  billing: annual
+  positioning: Most comprehensive
+  included:
+  - Everything in 100+ Care
+  - Advanced cancer screening (including low-dose lung CT and cardiac MRI)
+  - Dedicated concierge clinician
+  source: https://www.humanlongevity.com/programs/
+standalone_services:
+- name: Whole Body MRI
+  price: 3900
+  currency: USD
+  billing: one-time
+  description: Standalone high-resolution 3T whole-body MRI, read by radiologists and longevity clinicians.
+  source: https://www.humanlongevity.com/whole-body-mri/

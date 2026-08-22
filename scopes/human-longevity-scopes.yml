@@ -1,0 +1,48 @@
+generated: '2026-08-22'
+method: probed
+source: https://auth.humanlongevity.com/.well-known/openid-configuration
+note: >-
+  These are the scopes_supported values Human Longevity's own OpenID Connect discovery document
+  advertises for the HLI client-portal authorization server. They are the standard OIDC scope set
+  plus Auth0's per-claim scopes; there are NO product or API scopes, because Human Longevity
+  publishes no API for a third party to be authorized against. No scope reference page exists on the
+  provider's site — this artifact is derived entirely from the machine-readable discovery document.
+authorization_server: https://auth.humanlongevity.com/
+docs: null
+docs_note: No published scopes/permissions reference page was found on humanlongevity.com.
+scopes:
+- name: openid
+  description: Standard OIDC scope requesting an ID token for the authenticated client.
+  standard: openid-connect-core
+- name: profile
+  description: Standard OIDC scope releasing the basic profile claim set.
+  standard: openid-connect-core
+- name: offline_access
+  description: Standard OIDC scope requesting a refresh token.
+  standard: openid-connect-core
+- name: address
+  description: Standard OIDC scope releasing the address claim.
+  standard: openid-connect-core
+- name: phone
+  description: Standard OIDC scope releasing phone_number and phone_number_verified claims.
+  standard: openid-connect-core
+- name: email
+  description: Releases the email claim.
+- name: email_verified
+  description: Releases the email_verified claim.
+- name: name
+  description: Releases the name claim.
+- name: given_name
+  description: Releases the given_name claim.
+- name: family_name
+  description: Releases the family_name claim.
+- name: nickname
+  description: Releases the nickname claim.
+- name: picture
+  description: Releases the picture claim.
+- name: created_at
+  description: Releases the Auth0 created_at claim for the user record.
+- name: identities
+  description: Releases the Auth0 identities array (linked identity providers) for the user.
+scope_count: 14
+product_scope_count: 0

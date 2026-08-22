@@ -1,0 +1,34 @@
+generated: '2026-08-22'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts plus auth./portal. subdomains discovered in the client-portal
+  bundle
+hosts:
+- host: www.humanlongevity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 13 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: auth.humanlongevity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 27 12:23:09 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  note: Auth0 custom-domain authorization server for the HLI client portal; serves a real OpenID Connect
+    discovery document.
+- host: portal.humanlongevity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 02:51:16 2026 GMT
+  hsts: false
+  note: HLI client portal (Angular SPA). No Strict-Transport-Security response header observed on the
+    root document.
+domains:
+- domain: humanlongevity.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

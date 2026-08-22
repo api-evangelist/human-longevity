@@ -1,17 +1,35 @@
 aid: human-longevity
 name: Human Longevity
-description: 'Human Longevity is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Human Longevity, Inc. (HLI) is a San Diego based precision-health company founded in 2013
+  by Dr. J. Craig Venter, the scientist who led the first sequencing of the human genome. HLI operates
+  clinics in San Diego and South San Francisco that deliver an executive health assessment combining whole-body
+  and brain MRI, coronary CT angiography with FDA-cleared Cleerly AI plaque analysis, clinical-grade whole
+  genome sequencing of all 6.4 billion base pairs in a CLIA-certified lab, and 120+ blood biomarkers,
+  all interpreted by the company's proprietary Longevity AI models against a reference set of more than
+  50,000 sequenced genomes. Results are delivered to clients through the HLI mobile app and an Auth0-protected
+  client portal. HLI publishes no public developer program, API reference, or machine-readable API contract;
+  its software is shipped only as an end-user product to clinic clients.
 url: https://raw.githubusercontent.com/api-evangelist/human-longevity/refs/heads/main/apis.yml
+image: https://www.humanlongevity.com/logo-mark-black.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-secondary-market-listing: https://forgeglobal.com/human-longevity_stock/
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Health
+- Healthcare
+- Genomics
+- Precision Medicine
+- Diagnostics
+- Artificial Intelligence
+- Longevity
+- Life Sciences
+- Medical Imaging
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,59 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/human-longevity-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/human-longevity_stock/
+  url: https://www.humanlongevity.com/
+- type: Support
+  url: https://www.humanlongevity.com/contact/
+- type: TermsOfService
+  url: https://www.humanlongevity.com/terms/
+- type: PrivacyPolicy
+  url: https://www.humanlongevity.com/privacy/
+- type: Login
+  url: https://portal.humanlongevity.com/
+- type: GitHubOrganization
+  url: https://github.com/humanlongevity
+- type: LLMsTxt
+  url: llms/human-longevity-llms.txt
+- type: WellKnown
+  url: well-known/human-longevity-well-known.yml
+- type: Authentication
+  url: authentication/human-longevity-authentication.yml
+- type: OAuthScopes
+  url: scopes/human-longevity-scopes.yml
+- type: Conformance
+  url: conformance/human-longevity-conformance.yml
+- type: Compliance
+  url: conformance/human-longevity-conformance.yml
+- type: Packages
+  url: packages/human-longevity-packages.yml
+- type: Plans
+  url: plans/human-longevity-plans-pricing.yml
+- type: Pricing
+  url: https://www.humanlongevity.com/programs/
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 11
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: Human Longevity ships software only as an end-user clinic product — the HLI app and an Auth0-gated
+    client portal — so /developers, /api and every OpenAPI/Swagger path on www.humanlongevity.com return
+    404 while the only machine-readable documents the company serves are an llms.txt marketing site map
+    and the OpenID Connect discovery document for its own portal login.
+  evidence:
+  - url: https://www.humanlongevity.com/developers
+    status: 404
+  - url: https://www.humanlongevity.com/openapi.json
+    status: 404
+  - url: https://www.humanlongevity.com/llms.txt
+    status: 200
+  - url: https://auth.humanlongevity.com/.well-known/openid-configuration
+    status: 200
+  - url: https://portal.humanlongevity.com/
+    status: 200
+  checked: '2026-08-22'

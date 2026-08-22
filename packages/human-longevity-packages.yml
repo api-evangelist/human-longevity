@@ -1,0 +1,86 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://api.github.com/orgs/humanlongevity/repos (9 public repositories, 4 first-party) and
+  https://pypi.org/pypi/tredparse/json. npm, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist
+  and crates.io were checked for a first-party "humanlongevity" / "hli" client library and returned
+  nothing.
+sdk_count: 0
+note: >-
+  Human Longevity publishes NO API client SDK in any language, because it publishes no API. The
+  packages below are first-party open-source BIOINFORMATICS RESEARCH TOOLS released by HLI's
+  computational biology group — read-locally command-line genomics software, not client libraries
+  for a Human Longevity service. They are recorded here so the repository is complete, and
+  deliberately NOT wired to a `SDKs` pointer in apis.yml, which would misrepresent them as API
+  client libraries. Every one of them is dormant: the newest first-party push is 2023-10-13 and the
+  only registry release is from 2021-12-06. The remaining five repositories in the GitHub
+  organization (htslib, bcftools, luigi, hgvs, transvar) are unmodified forks of upstream projects
+  and are excluded.
+packages:
+- name: xHLA
+  language: python
+  official: true
+  kind: research-tool
+  registry: github
+  url: https://github.com/humanlongevity/HLA
+  version: null
+  published: null
+  version_note: >-
+    No tagged release and no package-registry distribution; the project ships as a Docker image
+    built from the repository, so there is no registry metadata endpoint to read a version from.
+  last_pushed: '2023-10-13'
+  description: Fast and accurate HLA typing from short-read sequence data.
+- name: tredparse
+  language: python
+  official: true
+  kind: research-tool
+  registry: pypi
+  url: https://pypi.org/project/tredparse/
+  repository: https://github.com/humanlongevity/tredparse
+  version: 1.1.12
+  published: '2021-12-06'
+  version_note: >-
+    Read from https://pypi.org/pypi/tredparse/json. The PyPI record lists Homepage
+    github.com/tanghaibao/tredparse (the HLI author's personal mirror) rather than the
+    humanlongevity organization repository; both hold the same tool.
+  last_pushed: '2020-08-20'
+  description: 'TREDPARSE: HLI short tandem repeat (STR) caller.'
+- name: 3DTS
+  language: scala
+  official: true
+  kind: research-tool
+  registry: github
+  url: https://github.com/humanlongevity/3DTS
+  version: null
+  published: null
+  version_note: No tagged release and no package-registry distribution.
+  last_pushed: '2017-09-08'
+  description: 3D structural intolerance scoring pipeline.
+- name: mbmi
+  language: r
+  official: true
+  kind: research-tool
+  registry: github
+  url: https://github.com/humanlongevity/mbmi
+  version: null
+  published: null
+  version_note: No CRAN release; installable only from source. No registry metadata endpoint exists.
+  last_pushed: '2019-03-09'
+  description: R package accompanying HLI metabolic/BMI genomics research. No repository description published.
+registries_checked:
+- registry: npm
+  result: no first-party package found
+- registry: pypi
+  result: tredparse only
+- registry: maven-central
+  result: no first-party package found
+- registry: nuget
+  result: no first-party package found
+- registry: pkg.go.dev
+  result: no first-party package found
+- registry: rubygems
+  result: no first-party package found
+- registry: packagist
+  result: no first-party package found
+- registry: crates.io
+  result: no first-party package found
